@@ -9,3 +9,5 @@
 
 [springboot]: http://spring-projects.ru/projects/spring-boot/
 [gradle]: https://gradle.org/getting-started-gradle-java/#toggle-id-1
+
+В папке `import_instruction` приведен пример импорта проекта в среде IntelliJ IDEA
