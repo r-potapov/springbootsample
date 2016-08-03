@@ -1,13 +1,21 @@
-# Шаблон проекта `Spring Boot`
+# РЁР°Р±Р»РѕРЅ РїСЂРѕРµРєС‚Р° `Spring Boot`
 
-Простой пример создания Spring Boot приложения.
-Используемые компоненты:
+РџСЂРѕСЃС‚РѕР№ РїСЂРёРјРµСЂ СЃРѕР·РґР°РЅРёСЏ Spring Boot РїСЂРёР»РѕР¶РµРЅРёСЏ.
+РСЃРїРѕР»СЊР·СѓРµРјС‹Рµ РєРѕРјРїРѕРЅРµРЅС‚С‹:
 
-- [Spring Boot][springboot] для создания полноценных Spring приложений.
+- [Spring Boot][springboot] РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РїРѕР»РЅРѕС†РµРЅРЅС‹С… Spring РїСЂРёР»РѕР¶РµРЅРёР№.
 - Java 1.8
-- Cистема автоматической сборки [Gradle][gradle]
+- CРёСЃС‚РµРјР° Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕР№ СЃР±РѕСЂРєРё [Gradle][gradle]
 
 [springboot]: http://spring-projects.ru/projects/spring-boot/
 [gradle]: https://gradle.org/getting-started-gradle-java/#toggle-id-1
+[pathconf]: https://www.java.com/ru/download/help/path.xml
+[whatisrest]: https://spring.io/understanding/REST
+[restservice]: https://spring.io/guides/gs/rest-service/
 
-В папке `import_instruction` приведен пример импорта проекта в среде IntelliJ IDEA
+Р’ РїР°РїРєРµ `import_instruction` РїСЂРёРІРµРґРµРЅ РїСЂРёРјРµСЂ РёРјРїРѕСЂС‚Р° РїСЂРѕРµРєС‚Р° РІ СЃСЂРµРґРµ IntelliJ IDEA
+
+РџРѕР»РµР·РЅС‹Рµ СЃСЃС‹Р»РєРё:
+- [РљР°Рє Р·Р°РґР°С‚СЊ РёР»Рё РЅР°СЃС‚СЂРѕРёС‚СЊ СЃРёСЃС‚РµРјРЅСѓСЋ РїРµСЂРµРјРµРЅРЅСѓСЋ][pathconf] (РЅР° РїСЂРёРјРµСЂРµ PATH)
+- [РћСЃРЅРѕРІРЅС‹Рµ РїСЂРёРЅС†РёРїС‹ REST][whatisrest]
+- [РџСЂРѕСЃС‚РѕР№ REST-СЃРµСЂРІРёСЃ][restservice]
