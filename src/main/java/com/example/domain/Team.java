@@ -1,6 +1,8 @@
 package com.example.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,10 +19,11 @@ public class Team {
     private String name;
 
     @OneToMany(mappedBy = "team")
-    @JsonBackReference
+    //@JsonBackReference
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     private List<Teammate> members;
 
-    private Team() {
+    public Team() {
         members = new ArrayList<>();
     }
 
@@ -31,6 +34,10 @@ public class Team {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
