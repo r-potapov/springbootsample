@@ -1,33 +1,34 @@
-package com.example.domain;
+package com.example.dto;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.example.domain.Team;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-public class Team {
-    @Id @GeneratedValue
+public class TeamDTO {
     private Long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "team")
-    private List<Teammate> members;
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    private List<TeammateDTO> members;
 
-    public Team() {
+    public TeamDTO() {
         members = new ArrayList<>();
     }
 
-    public Team(String name) {
+    public TeamDTO(String name) {
         this();
         this.name = name;
+    }
+
+    public TeamDTO(Team team) {
+        this();
+        if(team!=null) {
+            this.id = team.getId();
+            this.name = team.getName();
+        }
     }
 
     public Long getId() {
@@ -46,11 +47,11 @@ public class Team {
         this.name = name;
     }
 
-    public List<Teammate> getMembers() {
+    public List<TeammateDTO> getMembers() {
         return members;
     }
 
-    public void setMembers(List<Teammate> members) {
+    public void setMembers(List<TeammateDTO> members) {
         this.members = members;
     }
 }

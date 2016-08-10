@@ -1,17 +1,10 @@
-package com.example.domain;
+package com.example.dto;
 
+import com.example.domain.Teammate;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
-@Entity
-public class Teammate {
-    @Id @GeneratedValue
+public class TeammateDTO {
     private Long id;
 
     private String firstName;
@@ -20,16 +13,29 @@ public class Teammate {
 
     private String position;
 
-    @ManyToOne
-    private Team team;
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    private TeamDTO team;
 
-    public Teammate() {
+    public TeammateDTO() {
     }
 
-    public Teammate(String firstName, String lastName) {
+    public TeammateDTO(String firstName, String lastName) {
         this();
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public TeammateDTO(Teammate teammate) {
+        this();
+        if (teammate!=null) {
+            this.id = teammate.getId();
+            this.firstName = teammate.getFirstName();
+            this.lastName = teammate.getLastName();
+            this.position = teammate.getPosition();
+            if(teammate.getTeam()!=null){
+                this.team = new TeamDTO(teammate.getTeam());
+            }
+        }
     }
 
     public Long getId() {
@@ -64,11 +70,11 @@ public class Teammate {
         this.position = position;
     }
 
-    public Team getTeam() {
+    public TeamDTO getTeam() {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void setTeam(TeamDTO team) {
         this.team = team;
     }
 
