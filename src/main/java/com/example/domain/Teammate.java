@@ -23,7 +23,7 @@ public class Teammate {
     @ManyToOne
     private Team team;
 
-    public Teammate() {
+    private Teammate() {
     }
 
     public Teammate(String firstName, String lastName) {
@@ -34,10 +34,6 @@ public class Teammate {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {

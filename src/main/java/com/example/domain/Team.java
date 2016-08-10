@@ -21,7 +21,7 @@ public class Team {
     @OneToMany(mappedBy = "team")
     private List<Teammate> members;
 
-    public Team() {
+    private Team() {
         members = new ArrayList<>();
     }
 
@@ -32,10 +32,6 @@ public class Team {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
